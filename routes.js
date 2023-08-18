@@ -1,9 +1,11 @@
 // This file doesn’t go through Babel and thus can’t use ES2015 modules.
-const routes = require('next-routes')()
+import routes from 'next-routes'
 
 // Dynamic routes should be added below.
-routes
+const router = routes()
+
+router
   .add('project', '/project/:projectSlug')
   .add('locales', '/project/:projectSlug/locales')
 
-module.exports = routes
+export default router
